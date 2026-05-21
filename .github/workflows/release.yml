@@ -1,0 +1,80 @@
+name: Release Desktop App
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: macos-latest
+            args: "--target universal-apple-darwin"
+          - platform: windows-latest
+            args: ""
+
+    runs-on: ${{ matrix.platform }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+
+      - name: Cache Rust deps
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: "./src-tauri -> target"
+
+      - name: Install npm deps
+        run: npm ci
+
+      - name: Convert WebM to HEVC-alpha MOV (macOS only)
+        if: matrix.platform == 'macos-latest'
+        run: |
+          set -e
+          cd public/lara/videos
+          for f in *.webm; do
+            name="${f%.webm}"
+            echo "→ $name"
+            ffmpeg -y -hide_banner -loglevel error \
+              -c:v libvpx-vp9 -i "$f" \
+              -c:v hevc_videotoolbox -allow_sw 1 -alpha_quality 0.75 \
+              -tag:v hvc1 -pix_fmt yuva420p -an \
+              -b:v 1200k \
+              "$name.mov"
+          done
+          ls -lh
+
+      - name: Build Tauri app
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: ${{ github.ref_name }}
+          releaseName: "KI-Guide ${{ github.ref_name }}"
+          releaseBody: |
+            ## Installation
+
+            **Windows:** Lade `KI-Guide_*_x64-setup.exe` herunter und führe die Datei aus.
+            Falls SmartScreen warnt: "Weitere Informationen" → "Trotzdem ausführen".
+
+            **macOS:** Lade die `.dmg` passend zu deinem Mac herunter.
+            Beim ersten Start: Rechtsklick auf KI-Guide.app → "Öffnen" → "Öffnen" bestätigen.
+            (Apple-Gatekeeper-Workaround, da App nicht signiert.)
+
+            Viel Spaß mit Lara! 🎉
+          releaseDraft: true
+          prerelease: false
+          args: ${{ matrix.args }}

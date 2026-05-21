@@ -1,0 +1,45 @@
+KI-Guide mit Lara — Schnellstart
+================================
+
+1 KLICK ZUM STARTEN
+-------------------
+   Doppelklicke einfach auf:   START.bat
+
+   Beim ersten Start werden die Pakete automatisch installiert
+   (dauert 1-2 Minuten). Danach oeffnet sich der Browser von selbst
+   auf http://localhost:3000
+
+VORAUSSETZUNG
+-------------
+   Node.js muss installiert sein. Falls nicht:
+   -> https://nodejs.org/   (LTS-Version herunterladen)
+
+WAS BEI PROBLEMEN TUN
+---------------------
+   Manueller Start in PowerShell oder CMD:
+
+     cd ki-guide
+     npm install
+     npm run dev
+
+   Dann im Browser:   http://localhost:3000
+
+PROJEKTSTRUKTUR
+---------------
+   app/             — Next.js Pages (Hero, Anfaenger Kapitel 1-7, Fortgeschritten)
+   components/      — React Components (LaraVideoPresenter, SlideVisuals, ChapterNav)
+   public/audio/    — Lara Sprachausgaben (ElevenLabs)
+   public/lara/     — Lara Charakter-Bilder und Videos
+   scripts/         — PowerShell Scripts fuer Audio/Bild-Generierung
+
+PFADE ANPASSEN (wichtig!)
+-------------------------
+   In den Scripts unter scripts/ stehen absolute Pfade
+   (C:\Users\djherky\.claude\Medien ausgabe\ki-guide).
+   Wenn du das Projekt an einem anderen Pfad nutzen willst,
+   ersetze in diesen Dateien den alten Pfad mit deinem neuen.
+
+API-KEYS
+--------
+   Higgsfield: muss separat per `higgsfield login` eingerichtet werden
+   ElevenLabs: API-Key steht in den Scripts (kann ersetzt werden)

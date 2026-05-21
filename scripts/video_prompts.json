@@ -1,0 +1,21 @@
+{
+  "_note": "Job IDs tracked here as videos are launched. start_image media_id: 80088a13-99db-4dad-9b0c-44137fc1d23f",
+  "_base": "Professional young businesswoman with long brown hair in grey suit jacket and light blue shirt, standing in pure white seamless studio, broadcast quality, soft natural studio lighting, full body shot. ",
+  "jobs": {
+    "anf_ch1": { "id": "e6d7bff7-8291-4b7d-a794-44433cca9f82", "topic": "Was ist KI?", "prompt": "gesturing with open right hand as if introducing a concept, warm friendly explanatory smile, gentle confident hand motion" },
+    "anf_ch2": { "id": "b3389c7c-0970-437b-ad79-ad17ae0e9ff3", "topic": "Was kann KI?", "prompt": "presenting with both hands open showing multiple options or capabilities, enthusiastic animated explanatory expression, slight head turn" },
+    "anf_ch3": { "id": "e151ef19-ffa7-41f9-8da0-cc5444c8a54e", "topic": "KI im Einsatz", "prompt": "sweeping arm gesture from left to right as if showing the whole world or many applications, confident bright smile" },
+    "anf_ch4": { "id": "04770cae-47ee-457d-970e-15d5647a90ac", "topic": "Plattformen", "prompt": "counting on fingers gesture lifting one finger then another as if listing platforms, intellectual explanatory expression, slight head tilt" },
+    "anf_ch5": { "id": null, "topic": "KI-Modelle", "prompt": "thoughtful hand near chin then opening into explanatory teacher gesture, intellectual confident expression, slight smile while explaining models" },
+    "anf_ch6": { "id": null, "topic": "Preise", "prompt": "holding both hands apart at chest height as if showing a price range or comparison, reassuring warm smile, calm explanatory motion" },
+    "anf_ch7": { "id": null, "topic": "Übungen", "prompt": "inviting encouraging hand gesture as if saying come on let us try together, bright enthusiastic smile, slight forward lean of confidence" },
+    "fort_ch1": { "id": null, "topic": "KI-Agenten", "prompt": "both arms opening upward to present an exciting concept, broad confident smile, animated welcoming gesture" },
+    "fort_ch2": { "id": null, "topic": "Agent vs Chatbot", "prompt": "gesturing with one hand left and other hand right as if weighing two options on a scale, analytical engaged expression" },
+    "fort_ch3": { "id": null, "topic": "Agenten-Systeme", "prompt": "both hands gesturing as if displaying a collection of tools or systems side by side, explanatory enthusiastic expression" },
+    "fort_ch4": { "id": null, "topic": "OpenClaw", "prompt": "holding smartphone in left hand at chest height showing it, right hand gesturing as if introducing a powerful assistant, confident proud expression" },
+    "fort_ch5": { "id": null, "topic": "Claude Code", "prompt": "animated enthusiastic gesture as if typing on invisible keyboard then opening hands wide in success, excited confident expression" },
+    "fort_ch6": { "id": null, "topic": "Alternativen", "prompt": "open palms upward gesturing showing alternative options, knowing wise warm smile, slight head tilt" },
+    "fort_ch7": { "id": null, "topic": "Modell-Guide", "prompt": "decisive teacher gesture pointing with index finger then opening hand into recommendation, confident smiling expression" },
+    "fort_ch8": { "id": null, "topic": "Sicherheit", "prompt": "raising one hand in calm cautionary gesture then bringing both hands together reassuringly, serious but warm reassuring expression" }
+  }
+}
