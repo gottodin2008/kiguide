@@ -6,6 +6,9 @@ on:
       - "v*"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     strategy:
@@ -39,6 +42,10 @@ jobs:
 
       - name: Install npm deps
         run: npm ci
+
+      - name: Install ffmpeg (macOS only)
+        if: matrix.platform == 'macos-latest'
+        run: brew install ffmpeg
 
       - name: Convert WebM to HEVC-alpha MOV (macOS only)
         if: matrix.platform == 'macos-latest'
