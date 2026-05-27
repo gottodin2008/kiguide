@@ -44,5 +44,16 @@ next-env.d.ts
 /src-tauri/target/
 /src-tauri/gen/schemas/
 
+# Android / Tauri Mobile
+src-tauri/gen/android/.gradle/
+src-tauri/gen/android/build/
+src-tauri/gen/android/app/build/
+src-tauri/gen/android/local.properties
+src-tauri/gen/android/keystore.jks
+src-tauri/gen/android/keystore.properties
+*.keystore
+*.jks
+dist-android/
+
 # claude code local config
 .claude/
