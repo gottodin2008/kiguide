@@ -42,4 +42,4 @@ PFADE ANPASSEN (wichtig!)
 API-KEYS
 --------
    Higgsfield: muss separat per `higgsfield login` eingerichtet werden
-   ElevenLabs: API-Key steht in den Scripts (kann ersetzt werden)
+   ElevenLabs: setze $env:ELEVENLABS_API_KEY vor dem Ausfuehren der Scripts

@@ -1,5 +1,6 @@
 ﻿$ErrorActionPreference = "Stop"
-$apiKey = "REDACTED_REVOKED_KEY"
+$apiKey = $env:ELEVENLABS_API_KEY
+if (-not $apiKey) { Write-Error "ELEVENLABS_API_KEY environment variable is not set. Set it before running this script: `$env:ELEVENLABS_API_KEY='sk_...'`"; exit 1 }
 $voiceId = "ghgFyr7gmpr57xyTgX9q"
 $outDir = "$PSScriptRoot\..\public\audio"
 
