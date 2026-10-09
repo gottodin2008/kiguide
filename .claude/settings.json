@@ -9,5 +9,8 @@
   },
   "enabledPlugins": {
     "plan-progress@zycck-mods": true
-  }
+  },
+  "enabledMcpjsonServers": [
+    "youtube"
+  ]
 }
