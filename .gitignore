@@ -56,4 +56,6 @@ src-tauri/gen/android/keystore.properties
 dist-android/
 
 # claude code local config
-.claude/
+.claude/*
+!.claude/settings.json
+!.claude/skills/

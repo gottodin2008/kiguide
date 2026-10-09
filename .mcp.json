@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "youtube": {
+      "command": "node",
+      "args": ["tools/youtube-mcp/server.mjs"],
+      "env": {
+        "NODE_USE_ENV_PROXY": "1",
+        "NODE_NO_WARNINGS": "1"
+      }
+    }
+  }
+}
