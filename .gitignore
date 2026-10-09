@@ -58,3 +58,4 @@ dist-android/
 # claude code local config
 .claude/*
 !.claude/settings.json
+!.claude/skills/
